@@ -1,4 +1,4 @@
-const OutShop = () => {
-    return <h1>About us</h1>
+const OurShop = () => {
+    return <h1>Our shop</h1>
 }
-export default OutShop;
+export default OurShop;
