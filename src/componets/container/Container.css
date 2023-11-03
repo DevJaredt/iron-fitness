@@ -4,12 +4,15 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, auto));
     gap: 2rem;
     text-align: center;
+    width: 100%;
+    display: flex;
 }
 
 .container-box{
     padding: 43px;
     background: var(--other-color);
     border-radius: 3rem; 
+    width: 15rem;
 }
 
 .container-box img{

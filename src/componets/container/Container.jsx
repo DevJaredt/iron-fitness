@@ -1,8 +1,9 @@
 import img2 from "./../../assets/img/img2.png";
 import img3 from "./../../assets/img/img3.png";
 import img4 from "./../../assets/img/img4.png";
+import "./Container.css";
 
-const Contain = () => {
+const Container = () => {
     return ( <section className="container"> 
 
     <div className="container-box">
@@ -25,4 +26,4 @@ const Contain = () => {
  
 </section>);
 };
-export default Contain;
+export default Container;
