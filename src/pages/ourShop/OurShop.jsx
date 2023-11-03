@@ -1,4 +1,8 @@
+import Card from "../../componets/card/Card";
+import img from "./../../assets/img/img-proteinas/bipro-3lb-nueva-presentacion.webp"
 const OurShop = () => {
-    return <h1>Our shop</h1>
+    return (
+        <Card img={img} />
+    );
 }
 export default OurShop;
