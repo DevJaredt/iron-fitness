@@ -1,4 +1,5 @@
 import img1 from "./../../assets/img/img1.png";
+import "./Slider.css";
 
 const Slider = () => {
     return (<section className="home" id="home">

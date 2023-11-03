@@ -1,6 +1,7 @@
 import "./Nav.css";
 
 const Nav =  () => { 
+    
     return  <header> 
         <a href="#" className="logo"> <i className="bx bx-home"></i>IRON FITNESS</a>
         <ul className="navlist">
@@ -15,6 +16,5 @@ const Nav =  () => {
             <div className="bx bx-menu" id="menu-icon"></div>
         </div>
     </header>;
-}
-
+};
 export default Nav;
