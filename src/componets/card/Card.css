@@ -6,6 +6,11 @@
     background: #111 !important;
   }
   
+    .img{
+      width: 50%;
+      height: auto;
+
+    }
   .card {
     background: #222;
     border: 1px solid #dd2476;

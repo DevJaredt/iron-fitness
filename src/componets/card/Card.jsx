@@ -1,3 +1,6 @@
+
+import "./Card.css";
+
 const Card = ({ img, title, description }) => {
     return (
         <div className="container mx-auto mt-4">
