@@ -7,8 +7,7 @@ const Nav =  () => {
         <ul className="navlist">
             <li><a href={"/"} className="active">Home</a></li> 
             <li><a href={"/our_shop"}>Our shop</a></li>
-            <li><a href={"/our_custom"}>Our custom</a></li>
-            <li><a href={"/contacts_us"}>Contact us</a></li>    
+            <li><a href={"/our_custom"}>Our custom</a></li>  
         </ul>
         <div className="nav-icons">
             <a href="#"><i className="bx bx-search"></i></a>

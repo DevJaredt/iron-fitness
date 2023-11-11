@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Index from './pages/index/Index';
 import Nav from './componets/nav/Nav';
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,15 +24,6 @@ const router = createBrowserRouter([
       const OurCustom = (await import("./pages/ourCustom/OurCustom")).default
       return{ 
         element: <OurCustom/>
-      }
-    }
-  },
-  {
-    path : "/contacts_us",
-    lazy: async () => {
-      const ContactsUs = (await import("./pages/contactsUs/ContactsUs")).default
-      return{
-        element: <ContactsUs/>
       }
     }
   }
