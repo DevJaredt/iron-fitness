@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 
 
-*{
+* {
   margin: 0;
   padding: 0; 
   box-sizing: border-box; 
@@ -12,7 +12,7 @@
   scroll-padding-top: 3rem; 
 }
 
-:root{
+:root {
   --main-color: #29a7f0bb;
   --text-color: #fff;
   --other-color: #212121;
@@ -24,7 +24,7 @@
   --p-font: 1.1rem;   
 }
 
-body{
+body {
   background: var(--bg-color);
   color: var(--text-color);
 

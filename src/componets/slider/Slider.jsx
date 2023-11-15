@@ -1,4 +1,5 @@
 import img1 from "./../../assets/img/img1.png";
+import "./Slider.css";
 
 const Slider = () => {
     return (<section className="home" id="home">
@@ -7,9 +8,9 @@ const Slider = () => {
         <h1>Enjoy to the fullest Life</h1>
             <a href="#" className="btn"> Explore Menu <i className="bx bx-right-arrow"></i></a>
             <a href="#" className="btn2"> Order now </a>
-            <div className="home-img"> 
-                <img src={img1} width="25%" height="25%"/>
-            </div>
+        </div>
+        <div className="home-img"> 
+            <img src={img1}/>
         </div>
     </section>);
 };

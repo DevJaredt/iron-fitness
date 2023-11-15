@@ -9,20 +9,20 @@ const router = createBrowserRouter([
     element: <Index/>
   },
   {
-    path: "/about_us",
-    lazy: async () => {
-      const AboutUs = (await import("./pages/aboutUs/AboutUs")).default
-      return {
-        element: <AboutUs/>
-      }
-    }
-  },
-  {
     path : "/our_shop",
     lazy: async () => {
       const OurShop = (await import("./pages/ourShop/OurShop")).default 
       return{
         element: <OurShop/>
+      }
+    }
+  },
+  {
+    path : "/our_custom",
+    lazy : async () => {
+      const OurCustom = (await import("./pages/ourCustom/OurCustom")).default
+      return{ 
+        element: <OurCustom/>
       }
     }
   }
