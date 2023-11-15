@@ -1,0 +1,22 @@
+name: deploy page
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run build
+      
+      - name: Deploy 🚀
+        run: |
+          npm run deploy

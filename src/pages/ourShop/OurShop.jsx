@@ -1,6 +1,5 @@
 import "./OurShop.css";
 import Card from "../../componets/card/Card";
-import img from "./../../assets/img/img-proteinas/bipro-3lb-nueva-presentacion.webp"
 const OurShop = () => {
     const products = [
         {
@@ -60,7 +59,7 @@ const OurShop = () => {
     return (
         <div className="card-container"> 
             {
-                products.map((product, index) => <Card img={product.img} description={product.description} title={product.title} key={index} /> )
+                products.map((product, index) => <Card id={product.id} img={product.img} description={product.description} title={product.title} key={index} /> )
             }
         </div>
 
