@@ -7,7 +7,7 @@ const OurShop = () => {
             id: 1,
             title: "Creatina",
             description: "Te ayuda a la recuperacion muscular",
-            img: "http://placekitten.com/200/300"
+            img: "bipro-3lb-nueva-presentacion.webp"
         },
         {
             id: 2,
@@ -17,6 +17,41 @@ const OurShop = () => {
         },
         {
             id: 3,
+            title: "Creatina2",
+            description: "Te ayuda a la recuperacion muscular",
+            img: "http://placekitten.com/200/300"
+        },
+        {
+            id: 4,
+            title: "Creatina2",
+            description: "Te ayuda a la recuperacion muscular",
+            img: "http://placekitten.com/200/300"
+        },
+        {
+            id: 5,
+            title: "Creatina2",
+            description: "Te ayuda a la recuperacion muscular",
+            img: "http://placekitten.com/200/300"
+        },
+        {
+            id: 6,
+            title: "Creatina2",
+            description: "Te ayuda a la recuperacion muscular",
+            img: "http://placekitten.com/200/300"
+        },
+        {
+            id: 7,
+            title: "Creatina2",
+            description: "Te ayuda a la recuperacion muscular",
+            img: "http://placekitten.com/200/300"
+        },
+        {
+            id: 8,
+            title: "Creatina2",
+            description: "Te ayuda a la recuperacion muscular",
+            img: "http://placekitten.com/200/300"
+        },        {
+            id: 9,
             title: "Creatina2",
             description: "Te ayuda a la recuperacion muscular",
             img: "http://placekitten.com/200/300"

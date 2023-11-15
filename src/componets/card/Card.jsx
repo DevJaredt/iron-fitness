@@ -1,5 +1,10 @@
 
+import { addItemToCart } from "../../helper/cartManager";
 import "./Card.css";
+
+const onclickHandler = (item) => {
+    addItemToCart(item);
+};
 
 const Card = ({ img, title, description }) => {
     return (
@@ -8,6 +13,7 @@ const Card = ({ img, title, description }) => {
                 <div className="card-body">
                     <h5 className="card-title">{title}</h5>
                     <p className="card-text">{description}</p>
+                    <button>+</button>
                 </div>
         </div>
     )
