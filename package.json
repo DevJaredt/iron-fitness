@@ -1,9 +1,9 @@
 {
+  "homepage": "https://DevJaredt.github.io/iron-fitness",
   "name": "iron-fitness",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://DevJaredt.io/iron-fitness",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
