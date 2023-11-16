@@ -11,7 +11,7 @@ const Nav =  () => {
         </ul>
         <div className="nav-icons">
             <a href="#"><i className="bx bx-search"></i></a>
-            <a href="#"><i className="bx bx-user"></i></a>
+            <a href={"/login"}><i className="bx bx-user"></i></a>
             <a href="#"><i className="bx bx-cart"></i></a>
             <div className="bx bx-menu" id="menu-icon"></div>
         </div>

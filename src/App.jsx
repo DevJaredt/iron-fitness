@@ -25,7 +25,17 @@ const router = createBrowserRouter([
         element: <OurCustom/>
       }
     }
+  },
+  {
+    path : "/login",
+    lazy : async () => {
+      const Login = (await import("./pages/login/Login")).default
+      return{ 
+        element: <Login/>
+      }
+    }
   }
+  
 ]);
 
 function App() {
