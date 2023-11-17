@@ -6,7 +6,7 @@ const OurShop = () => {
             id: 1,
             title: "Creatina",
             description: "Te ayuda a la recuperacion muscular",
-            img: "bipro-3lb-nueva-presentacion.webp"
+            img: "http://placekitten.com/200/300"
         },
         {
             id: 2,

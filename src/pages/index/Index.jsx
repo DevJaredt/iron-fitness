@@ -8,7 +8,7 @@ const Index = () => {
         <Slider/>
         <Container/>
         <Shop/>
-       <Footer/>
+        <Footer/>
     </>
 }
 

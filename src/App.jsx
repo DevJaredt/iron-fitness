@@ -34,8 +34,25 @@ const router = createBrowserRouter([
         element: <Login/>
       }
     }
+  },
+  {
+    path : "/register",
+    lazy : async () => {
+      const Register = (await import("./pages/register/Register")).default
+      return{ 
+        element: <Register/>
+      }
+    },
+  },
+  {
+    path : "/shopping_cart",
+    lazy : async () => {
+      const ShoppingCart = (await import("./pages/shoppingCart/ShoppingCart")).default
+      return{ 
+        element: <ShoppingCart/>
+      }
+    }
   }
-  
 ]);
 
 function App() {

@@ -1,14 +1,17 @@
 import "./login.css"
 import { useState } from "react";
-import { error } from "../../utils/toast";
+import { success, error } from "../../utils/toast";
+import { post } from "../../utils/axios";
+import { Parameters } from "./../../utils/constants";
+import { setData } from "../../utils/localStorage";
+
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const onSubmitHandler = (e) => {
+    const onSubmitHandler = async (e) => {
         e.preventDefault();
-        console.log("here")
 
         if (!email) {
             return error("the email is required")
@@ -17,9 +20,16 @@ const Login = () => {
             return error("the password is required")
         }
 
-        console.log(email, password);
-        
-
+        try {
+            const url = `${Parameters.BACKEND_URL}/user/login`;
+            console.log(url);
+            const response = await post(url, { email, password });
+            console.log(response);
+            setData("token", response.token);
+            success("Sesion inciada con exito");
+        } catch (error) {
+            error("Error al iniciar sesion");
+        }
     };
 
     return (
@@ -42,7 +52,7 @@ const Login = () => {
         
                         <a className="text-darkyellow" href="#"><small>Forgot your password?</small></a>
                         <p className="text-whitesmoke text-center"><small>Do not have an account?</small></p>
-                        <a className="text-darkyellow" href="#"><small>Sign Up</small></a>
+                        <a className="text-darkyellow" href={"/register"}><small>Sign Up</small></a>
                     </form>
                     <p className="margin-t text-whitesmoke"><small> Your Name &copy; 2018</small> </p>
                 </div>

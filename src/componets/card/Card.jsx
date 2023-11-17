@@ -10,12 +10,12 @@ const onclickHandler = (item) => {
 
 const Card = ({ id, img, title, description }) => {
     return (
-        <div className="card" style={{width: "18rem"}}>
+        <div className="card" style={{width: "15rem", height: "500px"}}>
             <img src={ img } className="card-img-top" alt="..."/>
                 <div className="card-body">
                     <h5 className="card-title">{title}</h5>
                     <p className="card-text">{description}</p>
-                    <button onClick={() => onclickHandler({ id, img, title, description })}>+</button>
+                    <button className="btn btn-outline-primary btn-sm" onClick={() => onclickHandler({ id, img, title, description })}>+</button>
                 </div>
         </div>
     )
