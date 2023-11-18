@@ -1,0 +1,50 @@
+.App-header {
+background-color: #001f3f; /* Azul eléctrico para el encabezado */
+padding: 20px;
+color: white;
+}
+
+.ProductSection,
+.TrainingSection {
+margin: 20px;
+color: #000; /* Texto negro en las secciones de productos y entrenamiento */
+}
+
+.ProductList {
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
+}
+
+.Product {
+margin: 10px;
+padding: 10px;
+border: 1px solid #333; /* Borde oscuro para los productos */
+border-radius: 8px;
+background-color: #111; /* Fondo negro para los productos */
+}
+
+button {
+background-color: #0074cc; /* Azul eléctrico para los botones */
+color: white;
+border: none;
+padding: 8px 16px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 14px;
+margin: 4px 2px;
+cursor: pointer;
+border-radius: 4px;
+}
+
+button:hover {
+background-color: #005b9f; /* Cambio de tono al pasar el ratón sobre el botón */
+}
+
+footer {
+margin-top: 20px;
+padding: 10px;
+background-color: #001f3f; /* Azul eléctrico para el pie de página */
+color: white;
+}

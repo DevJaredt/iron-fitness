@@ -1,69 +1,30 @@
 import "./OurShop.css";
 import Card from "../../componets/card/Card";
+import { get } from "./../../utils/axios";
+import { Parameters } from "./../../utils/constants";
+
+import { useEffect, useState } from "react";
+
 const OurShop = () => {
-    const products = [
-        {
-            id: 1,
-            title: "Creatina",
-            description: "Te ayuda a la recuperacion muscular",
-            img: "http://placekitten.com/200/300"
-        },
-        {
-            id: 2,
-            title: "Creatina1",
-            description: "Te ayuda a la recuperacion muscular",
-            img: "http://placekitten.com/200/300"
-        },
-        {
-            id: 3,
-            title: "Creatina2",
-            description: "Te ayuda a la recuperacion muscular",
-            img: "http://placekitten.com/200/300"
-        },
-        {
-            id: 4,
-            title: "Creatina2",
-            description: "Te ayuda a la recuperacion muscular",
-            img: "http://placekitten.com/200/300"
-        },
-        {
-            id: 5,
-            title: "Creatina2",
-            description: "Te ayuda a la recuperacion muscular",
-            img: "http://placekitten.com/200/300"
-        },
-        {
-            id: 6,
-            title: "Creatina2",
-            description: "Te ayuda a la recuperacion muscular",
-            img: "http://placekitten.com/200/300"
-        },
-        {
-            id: 7,
-            title: "Creatina2",
-            description: "Te ayuda a la recuperacion muscular",
-            img: "http://placekitten.com/200/300"
-        },
-        {
-            id: 8,
-            title: "Creatina2",
-            description: "Te ayuda a la recuperacion muscular",
-            img: "http://placekitten.com/200/300"
-        },        {
-            id: 9,
-            title: "Creatina2",
-            description: "Te ayuda a la recuperacion muscular",
-            img: "http://placekitten.com/200/300"
-        },
-    ];
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        const getData = async () => {
+            const url = `${Parameters.BACKEND_URL}/product`;
+            const productsDb = await get(url);
+            setProducts(productsDb.products);
+        };
+        getData();
+    }, []);
     return (
         <div className="card-container"> 
             {
-                products.map((product, index) => <Card id={product.id} img={product.img} description={product.description} title={product.title} key={index} /> )
+                products.map((product, index) =>
+                    <Card id={product.id} img={product.img} description={product.description} title={product.title} price={product.price} key={index}/>
+                )
             }
         </div>
-
-        // <Card img={img} />
     );
 }
 export default OurShop;
