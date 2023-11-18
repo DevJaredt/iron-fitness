@@ -11,9 +11,15 @@ const OurShop = () => {
 
     useEffect(() => {
         const getData = async () => {
-            const url = `${Parameters.BACKEND_URL}/product`;
-            const productsDb = await get(url);
-            setProducts(productsDb.products);
+            try {
+                const url = `${Parameters.BACKEND_URL}/product`;
+                console.log("🚀 ~ file: OurShop.jsx:17 ~ getData ~ url:", url)
+                const productsDb = await get(url);
+                console.log(productsDb);
+                setProducts(productsDb.products);
+            } catch (error) {
+                console.error(error);
+            }
         };
         getData();
     }, []);
@@ -21,7 +27,7 @@ const OurShop = () => {
         <div className="card-container"> 
             {
                 products.map((product, index) =>
-                    <Card id={product.id} img={product.img} description={product.description} title={product.title} price={product.price} key={index}/>
+                    <Card id={product.id} img={product.image} description={product.description} title={product.title} price={product.price} key={index}/>
                 )
             }
         </div>
