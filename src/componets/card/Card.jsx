@@ -1,11 +1,9 @@
 
 import { addItemToCart } from "../../helper/cartManager";
-import { success } from "../../utils/toast";
 import "./Card.css";
 
 const onclickHandler = (item) => {
     addItemToCart(item);
-    success("Item agregado con exito");
 };
 
 const Card = ({ id, img, title, description, price }) => {
