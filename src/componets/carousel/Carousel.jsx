@@ -1,21 +1,31 @@
-import "./Carousel.css"
+import { Carousel } from 'react-bootstrap';
 
-const Carousel = () => {
+const CarouselComponent = () => {
   return (
-    <form>
-      <input type="radio" name="fancy" autoFocus value="clubs" id="clubs" />
-      <input type="radio" name="fancy" value="hearts" id="hearts" />
-      <input type="radio" name="fancy" value="spades" id="spades" />
-      <input type="radio" name="fancy" value="diamonds" id="diamonds" />
-
-      <label htmlFor="clubs">&#9827; Clubs</label>
-      <label htmlFor="hearts">&#9829; Hearts</label>
-      <label htmlFor="spades">&#9824; Spades</label>
-      <label htmlFor="diamonds">&#9830; Diamonds</label>
-
-      <div className="keys">Use left and right keys to navigate</div>
-    </form>
+    <Carousel>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={"https://suplementos.b-cdn.net/blog/best-protein-vs-iso-100.webp"}
+          alt="First slide"
+        />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={"https://usasuplementos.co/wp-content/uploads/2023/07/banner-usa-24072023-1080x540-1.webp"}
+          alt="Second slide"
+        />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={"https://acdn.mitiendanube.com/stores/952/114/themes/cubo/1-slide-1694621553127-1850633242-4201a16bd881224979481b51c336e8f71694621554-1024-1024.png?1099164675"}
+          alt="Third slide"
+        />
+      </Carousel.Item>
+    </Carousel>
   );
 };
 
-export default Carousel;
+export default CarouselComponent;
