@@ -27,7 +27,7 @@ const OurShop = () => {
         <div className="card-container"> 
             {
                 products.map((product, index) =>
-                    <Card id={product.id} img={product.image} description={product.description} title={product.title} price={product.price} key={index}/>
+                    <Card id={product.id} img={product.image} description={product.description} name={product.name} price={product.price} key={index}/>
                 )
             }
         </div>
