@@ -3,32 +3,52 @@ import "./ShoppingCart.css";
 import RowShoppingCart from "../../componets/rowShoppingCart/RowShoppingCart";
 import { getData, setData } from "./../../utils/localStorage";
 import { useEffect, useState } from "react";
+import { Parameters } from "../../utils/constants";
+import { post, remove } from "../../utils/axios";
+import { error, success } from "../../utils/toast";
 
 const ShoppingCart = () => {
     const [products, setProducts] = useState([]);
     
     const totalPrice = products.reduce((acc, current) => acc += current?.price * current?.amount, 0);
 
-    const removeProduct = (id) => {
-        const newProducts = products.filter(product => product.id !== id);
-        setProducts(newProducts);
-        setData("cart", newProducts);
+    const removeProduct = async (id) => {
+        try {
+            const newProducts = products.filter(product => product.id !== id);
+            const url = `${Parameters.BACKEND_URL}/cart/${id}`;
+            await remove(url)
+            setProducts(newProducts);
+            setData("cart", newProducts);
+            success("Item removido con exito");
+        } catch (err) {
+            error("Error al remover producto");
+        }
     };
 
-    const addOne = (id) => {
-        const newProducts = products.map((product) => {
-            if (product.id === id) {
-                const amount = product.amount + 1;
-                return { ...product, amount };
-            } else {
-                return product;
-            }
-        });
-
-        setProducts(newProducts);
+    const addOne = async (id) => {
+        try {
+            const newProducts = products.map((product) => {
+                if (product.id === id) {
+                    const amount = product.amount + 1;
+                    return { ...product, amount };
+                } else {
+                    return product;
+                }
+            });
+            const url = `${Parameters.BACKEND_URL}/cart`;
+            const data = {
+                product_id: id,
+                ammount: 1
+            };
+            await post(url, data);
+            success("Item agregado con exito");
+            setProducts(newProducts);
+        } catch (err) {
+            error("Error al agregar producto");
+        }
     };
 
-    const removeOne = (id) => {
+    const removeOne = async (id) => {
         let amount;
         const newProducts = products.map((product) => {
             if (product.id === id) {
@@ -38,12 +58,16 @@ const ShoppingCart = () => {
                 return product;
             }
         });
-
         if(amount === 0) {
             return removeProduct(id);
         }
-
+        const url = `${Parameters.BACKEND_URL}/cart/removeOne`;
+        const data = {
+            product_id: id,
+        };
+        await post(url, data);
         setProducts(newProducts);
+        success("Item removido con exito");
     };
 
     useEffect(() => {

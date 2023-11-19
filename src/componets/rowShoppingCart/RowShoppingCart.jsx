@@ -12,7 +12,7 @@ const RowShoppingCart = ({ id, title, description, price, amount, img, callbackR
                 <div className="col">
                 <a className="pointer" onClick={() => callbackRemoveOne(id)}>-</a><i href="#" className="border">{amount}</i><a className="pointer" onClick={() => callbackAddOne(id)}>+</a>
                 </div>
-                <div className="col">&euro; {price} <span className="close" onClick={() => callbackRemove(id)}>&#10005;</span></div>
+                <div className="col">$ {price} <span className="close pointer" onClick={() => callbackRemove(id)}>&#10005;</span></div>
             </div>
         </div>
     );

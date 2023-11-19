@@ -1,4 +1,13 @@
 import axios from "axios";
+import { getData } from "./localStorage";
+
+axios.interceptors.request.use((config) => {
+    const token = getData("token");
+    if(token) {
+        config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+});
 
 const get = (url) => {
     return new Promise((resolve, reject) => {
@@ -18,4 +27,13 @@ const post = (url, data) => {
     });
 };
 
-export { get, post };
+const remove = (url) => {
+    return new Promise((resolve, reject) => {
+        axios.delete(url)
+            .then(({ data }) => {
+                resolve(data);
+            }).catch((error) => reject(error));
+    });
+};
+
+export { get, post, remove };
