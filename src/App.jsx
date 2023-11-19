@@ -52,7 +52,8 @@ const router = createBrowserRouter([
         element: <ShoppingCart/>
       }
     }
-  }
+  },
+  
 ]);
 
 function App() {

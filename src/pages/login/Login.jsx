@@ -54,7 +54,7 @@ const Login = () => {
                         <p className="text-whitesmoke text-center"><small>Do not have an account?</small></p>
                         <a className="text-darkyellow" href={"/register"}><small>Sign Up</small></a>
                     </form>
-                    <p className="margin-t text-whitesmoke"><small> Your Name &copy; 2018</small> </p>
+                    <p className="margin-t text-whitesmoke"><small> IronFitness &copy; 2023</small> </p>
                 </div>
             </div>
     </section> 

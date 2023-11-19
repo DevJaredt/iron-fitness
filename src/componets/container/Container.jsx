@@ -23,7 +23,7 @@ const Container = () => {
         <h3>+57 3008987456</h3>
         <a href="#">Call us now</a>
     </div>
- 
+
 </section>);
 };
 export default Container;

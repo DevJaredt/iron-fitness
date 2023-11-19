@@ -31,7 +31,7 @@ body {
 /* Lines */
 
 .line-b {
-    border-bottom: 1px solid #FFEB3B !important;
+    border-bottom: 1px solid #3743f0b4 !important;
 }
 
 /* Buttons */
@@ -39,8 +39,8 @@ body {
     border-radius: 3px;
 }
 .form-button {
-    background-color: rgba(255, 235, 59, 0.24);
-    border-color: rgba(255, 235, 59, 0.24);
+    background-color: rgba(26, 26, 27, 0.24);
+    border-color: rgba(26, 26, 27, 0.24);
     color: #e6e6e6;
 }
 .form-button:hover,
@@ -51,15 +51,13 @@ body {
 .form-button:active:hover,
 .form-button.active:hover,
 .form-button.active:focus {
-    background-color: rgba(255, 235, 59, 0.473);
-    border-color: rgba(255, 235, 59, 0.473);
+    background-color: #3743f0b4;
+    border-color: #3743f0b4;
     color: #e6e6e6;
 }
 .button-l {
     width: 100% !important;
 }
-
-/* Margins g(global) - l(left) - r(right) - t(top) - b(bottom) */
 
 .margin-g {
     margin: 15px;
@@ -142,7 +140,7 @@ body {
 }
 .form-control:focus,
 .border-line:focus {
-    border-color: #FFEB3B;
+    border-color: #3743f0b4;
     background-color: #616161;
     color: #e6e6e6;
 }
@@ -158,7 +156,7 @@ body {
     background-color: #3a3a3aa2;
     color: inherit;
     padding: 15px 20px 20px 20px;
-    border-color: #FFEB3B;
+    border-color: #3743f0b4;
     border-image: none;
     border-style: solid solid none;
     border-width: 1px 0;
