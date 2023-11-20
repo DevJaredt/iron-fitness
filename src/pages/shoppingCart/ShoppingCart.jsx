@@ -122,7 +122,7 @@ const ShoppingCart = () => {
                         </div>
                     </div>
                     {
-                        products.map((product, key) => <RowShoppingCart id={product.id} callbackRemoveOne={removeOne} callbackAddOne={addOne} callbackRemove={removeProduct} title={product.title} description={product.description} amount={product.amount} price={product.price} img={product.img} key={key}/>)
+                        products.map((product, key) => <RowShoppingCart id={product.id} callbackRemoveOne={removeOne} callbackAddOne={addOne} callbackRemove={removeProduct} name={product.name} amount={product.amount} price={product.price} img={product.img} key={key}/>)
                     }
                 </div>
                 <div className="col-md-4 summary">

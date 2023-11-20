@@ -100,7 +100,7 @@ const Login = () => {
                         <input onKeyUp={(e)=>setPhoneNumber(e.target.value)} type="number" placeholder="Phone number" min="0" maxLength="10"/>
                         <input onKeyUp={(e)=>setEmailRegistration(e.target.value)} type="email" placeholder="Email"/>
                         <input onKeyUp={(e)=>setPasswordRegistration(e.target.value)} type="password" placeholder="Password"/>
-                        <input type="submit" value="Sign Up" />
+                        <input type="submit" className="button" value="Sign Up" />
                     </form>
                 </div>
                 <div className="form-container sign-in-container">
@@ -109,7 +109,7 @@ const Login = () => {
                         <input onKeyUp={(e)=>setEmail(e.target.value)} type="email" placeholder="Email" />
                         <input onKeyUp={(e)=>setPassword(e.target.value)} type="password" placeholder="Password" />
                         <a href="#">Forgot your password?</a>
-                        <input type="submit" value="Sign in" />
+                        <input className="button" type="submit" value="Sign in" />
                     </form>
                 </div>
                 <div className="overlay-container">

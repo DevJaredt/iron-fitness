@@ -4,6 +4,15 @@
 	box-sizing: border-box;
 }
 
+section {
+	padding: 0;
+}
+
+.main-bg {
+	z-index: 10;
+	margin-top: 10rem
+}
+
 body {
 	background: #0f0f0f;
 	display: flex;
@@ -43,7 +52,7 @@ a {
 	margin: 15px 0;
 }
 
-button {
+.button {
 	border-radius: 20px;
 	border: 1px solid #3743f0b4;
 	background-color: #3743f0b4;
@@ -56,15 +65,15 @@ button {
 	transition: transform 80ms ease-in;
 }
 
-button:active {
+.button:active {
 	transform: scale(0.95);
 }
 
-button:focus {
+.button:focus {
 	outline: none;
 }
 
-button.ghost {
+.button.ghost {
 	background-color: transparent;
 	border-color: #FFFFFF;
 }
@@ -110,7 +119,6 @@ input {
 .sign-in-container {
 	left: 0;
 	width: 50%;
-	z-index: 2;
 }
 
 .container.right-panel-active .sign-in-container {
@@ -121,7 +129,6 @@ input {
 	left: 0;
 	width: 50%;
 	opacity: 0;
-	z-index: 1;
 }
 
 .container.right-panel-active .sign-up-container {

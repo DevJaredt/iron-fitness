@@ -10,13 +10,12 @@ const onclickHandler = (item) => {
 
 const customStyles = {
     content: {
-      top: '50%',
+      top: '55%',
       left: '50%',
       right: 'auto',
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
-      borderRadius: "100px",
       width: "55%",
       height: "80%"
     },
@@ -29,8 +28,8 @@ const Card = ({ id, img, name , description, price }) => {
 
     }
     return (
-        <div className="card animate__animated animate__flipInX" style={{width: "15rem", height: "500px"}}>
-            <img src={ img } className="card-img-top" alt="..."/>
+        <div className="card animate__animated animate__flipInX" style={{width: "15rem", height: "32rem"}}>
+            <img src={ img } className="card-img-top" alt="..." style={{ height: "14rem" }}/>
             <div className="card-body">
                 <h5 className="card-title">{name}</h5>
                 <p data-tooltip={description} className="card-text">{description.slice(0,50)+"..."}</p>
@@ -43,7 +42,7 @@ const Card = ({ id, img, name , description, price }) => {
                 onRequestClose={closeModal}
                 style={customStyles}
             >
-                <CardDetails description={description} img={img} name={name} price={price}/>
+                <CardDetails description={description} img={img} name={name} price={price} callbackAddToCart={onclickHandler}/>
             </Modal>
         </div>
     )

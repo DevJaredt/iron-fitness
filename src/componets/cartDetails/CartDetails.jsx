@@ -1,47 +1,30 @@
 import "./CartDetails.css"
 
-const CardDetails = ({img, name , description, price}) => {
-    return <div style={{color:"#000000"}}>
-    <div className="card_detail__title">
-      <h3>Details of the products</h3>
-    </div>
-    <div className="card_detail__body">
-      <div className="half">
-        <div className="featured_text">
-          <h1>{name}</h1>
-          <p className="price">${price}</p>
-        </div>
-        <div className="image">
-          <img src={img} style={{width:"22rem"}} alt=""/>
-        </div>
-      </div>
-      <div className="half">
-        <div className="description">
-          <p>{description}</p>
-        </div>
-        <span className="stock"><i className="fa fa-pen"></i> In stock</span>
-        <div className="reviews">
-          <ul className="stars">
-            <li><i className="fa fa-star"></i></li>
-            <li><i className="fa fa-star"></i></li>
-            <li><i className="fa fa-star"></i></li>
-            <li><i className="fa fa-star"></i></li>
-            <li><i className="fa fa-star-o"></i></li>
-          </ul>
-          <span>(64 reviews)</span>
+const CardDetails = ({img, name , description, price, callbackAddToCart}) => {
+    return (
+      <div className="container mt-5" style={{ "color": "#000000" }}>
+        <div className="row">
+          <div className="col-md-6">
+            <img
+              src={img}
+              className="img-fluid rounded product-image"
+              alt={name}
+              style={{ transition: 'transform 0.5s ease' }}
+              onMouseOver={(e) => (e.target.style.transform = 'scale(1.1)')}
+              onMouseOut={(e) => (e.target.style.transform = 'scale(1)')}
+            />
+          </div>
+          <div className="col-md-6">
+            <div className="product-details">
+              <h2 className="product-title">{name}</h2>
+              <p className="product-description">{description}</p>
+              <p className="product-price">Price: ${price}</p>
+              <button className="btn btn-primary" onClick={() => callbackAddToCart({img, name , description, price, callbackAddToCart})}>Add to Cart</button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div className="card_detail__footer">
-      <div className="recommend">
-        <p>Recommended by</p>
-        <h3>Andrew Palmer</h3>
-      </div>
-      <div className="action">
-        <button type="button">Add to cart</button>
-      </div>
-    </div>
-  </div>
+    );
 }
 
 export default CardDetails;

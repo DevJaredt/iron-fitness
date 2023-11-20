@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One|Montserrat:300,400,700,800|Open+Sans:300');
 
-.card_detail{
+.card_details{
   box-shadow: 0 6px 6px rgba(#000, 0.3);
   transition: 200ms;
   background: #fff;
   color: #000;
   
-  .card_detail__title{
+  .card_details__title{
     display: flex;
     align-items: center;
     padding: 30px 40px;
@@ -39,7 +39,7 @@
     }
   }
   
-  .card_detail__body{
+  .card_details__body{
     padding: 0 40px;
     display: block;
     flex-flow: row no-wrap;
@@ -137,7 +137,7 @@
     }
   }
   
-  .card_detail__footer{
+  .card_details__footer{
     padding: 30px 40px;
     display: flex;
     flex-flow: row no-wrap;
