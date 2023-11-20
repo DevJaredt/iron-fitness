@@ -142,7 +142,7 @@ const ShoppingCart = () => {
                 </div>
             </div>
             <Modal
-                isOpen={true}
+                isOpen={processingPayment}
                 onRequestClose={closeModal}
                 style={customStyles}
                 contentLabel="Procesando pago"
