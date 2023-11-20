@@ -94,8 +94,7 @@ const Login = () => {
             <div className={isSignUp ? 'container right-panel-active' : 'container'} id="container">
                 <div className="form-container sign-up-container">
                     <form onSubmit={onRegistrationHandler}>
-                        <h3>Create Account</h3>
-                        <span>or use your email for registration</span>
+                        <h3>𝐂𝐫𝐞𝐚𝐭𝐞 𝐀𝐜𝐜𝐨𝐮𝐧𝐭</h3>
                         <input onKeyUp={(e)=>setName(e.target.value)} type="text" placeholder="Name"/>
                         <input onKeyUp={(e)=>setLastName(e.target.value)} type="text" placeholder="Last name"/>
                         <input onKeyUp={(e)=>setPhoneNumber(e.target.value)} type="number" placeholder="Phone number" min="0" maxLength="10"/>
@@ -106,13 +105,7 @@ const Login = () => {
                 </div>
                 <div className="form-container sign-in-container">
                     <form onSubmit={onSubmitHandler}>
-                        <h1>Sign in</h1>
-                        <div className="social-container">
-                            <a href="#" className="social"><i className="fab fa-facebook-f"></i></a>
-                            <a href="#" className="social"><i className="fab fa-google-plus-g"></i></a>
-                            <a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
-                        </div>
-                        <span>or use your account</span>
+                        <h1>𝐒𝐢𝐠𝐧 𝐢𝐧</h1>
                         <input onKeyUp={(e)=>setEmail(e.target.value)} type="email" placeholder="Email" />
                         <input onKeyUp={(e)=>setPassword(e.target.value)} type="password" placeholder="Password" />
                         <a href="#">Forgot your password?</a>
@@ -122,12 +115,12 @@ const Login = () => {
                 <div className="overlay-container">
                     <div className="overlay">
                         <div className="overlay-panel overlay-left">
-                            <h1>Welcome Back!</h1>
+                            <h1>𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐁𝐚𝐜𝐤!</h1>
                             <p>To keep connected with us please login with your personal info</p>
                             <button className="ghost" id="signIn" onClick={handleSignInClick}>Sign In</button>
                         </div>
                         <div className="overlay-panel overlay-right">
-                            <h1>Hello, Friend!</h1>
+                            <h1>𝐇𝐞𝐥𝐥𝐨, 𝐅𝐫𝐢𝐞𝐧𝐝!</h1>
                             <p>Enter your personal details and start journey with us</p>
                             <button className="ghost" id="signUp" onClick={handleSignUpClick}>Sign Up</button>
                         </div>

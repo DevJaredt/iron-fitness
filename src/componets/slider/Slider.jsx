@@ -6,7 +6,7 @@ const Slider = () => {
         <div className="home-text">
         <h1>Force, <span>Physical & </span></h1>
         <h1>Enjoy to the fullest Life</h1>
-            <a href={"/our_shop"} className="btn"> Explore Menu <i className="bx bx-right-arrow"></i></a>
+            <a href={"/our_shop"} className="btn"> All products <i className="bx bx-right-arrow"></i></a>
             <a href={"/shopping_cart"} className="btn2"> Order now </a>
         </div>
         <div className="home-img"> 
