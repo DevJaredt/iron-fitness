@@ -7,8 +7,15 @@ import { setData } from "../../utils/localStorage";
 
 
 const Login = () => {
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const [name, setName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [emailRegistration, setEmailRegistration] = useState("");
+    const [passwordRegistration, setPasswordRegistration] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
 
     const onSubmitHandler = async (e) => {
         e.preventDefault();
@@ -22,14 +29,53 @@ const Login = () => {
 
         try {
             const url = `${Parameters.BACKEND_URL}/user/login`;
-            console.log(url);
             const response = await post(url, { email, password });
-            console.log(response);
             setData("token", response.token);
             success("Sesion inciada con exito");
+            setEmail("");
+            setPassword("");
         } catch (err) {
             error("Error al iniciar sesion");
         }
+    };
+
+    const onRegistrationHandler = async (e) => {
+        try {
+            e.preventDefault();
+    
+            const data = {
+                name,
+                last_name: lastName,
+                email: emailRegistration,
+                password: passwordRegistration,
+                phone_number: phoneNumber
+            };
+    
+            let err = false;
+            for(let key of Object.keys(data)) {
+                if (!data[key]) {
+                    err = true;
+                }
+            }
+    
+            if(err) {
+                return error("Todos los campos son obligatorios");
+            }
+
+            const url = `${Parameters.BACKEND_URL}/user/`;
+
+            await post(url, data);
+            success("Usuario registrado con exito");
+            setName("");
+            setLastName("");
+            setEmailRegistration("");
+            setPasswordRegistration("");
+            setPhoneNumber("");
+        } catch (err) {
+            error("Error al registrarse");
+        }
+
+
     };
 
     const [isSignUp, setIsSignUp] = useState(false);
@@ -44,21 +90,18 @@ const Login = () => {
   
 
     return (
-    <section className="main-bg">
-                <div className={isSignUp ? 'container right-panel-active' : 'container'} id="container">
+        <section className="main-bg">
+            <div className={isSignUp ? 'container right-panel-active' : 'container'} id="container">
                 <div className="form-container sign-up-container">
-                    <form action="#">
-                        <h1>Create Account</h1>
-                        <div className="social-container">
-                            <a href="#" className="social"><i className="fab fa-facebook-f"></i></a>
-                            <a href="#" className="social"><i className="fab fa-google-plus-g"></i></a>
-                            <a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
-                        </div>
+                    <form onSubmit={onRegistrationHandler}>
+                        <h3>Create Account</h3>
                         <span>or use your email for registration</span>
-                        <input type="text" placeholder="Name" />
-                        <input type="email" placeholder="Email" />
-                        <input type="password" placeholder="Password" />
-                        <button>Sign Up</button>
+                        <input onKeyUp={(e)=>setName(e.target.value)} type="text" placeholder="Name"/>
+                        <input onKeyUp={(e)=>setLastName(e.target.value)} type="text" placeholder="Last name"/>
+                        <input onKeyUp={(e)=>setPhoneNumber(e.target.value)} type="number" placeholder="Phone number" min="0" maxLength="10"/>
+                        <input onKeyUp={(e)=>setEmailRegistration(e.target.value)} type="email" placeholder="Email"/>
+                        <input onKeyUp={(e)=>setPasswordRegistration(e.target.value)} type="password" placeholder="Password"/>
+                        <input type="submit" value="Sign Up" />
                     </form>
                 </div>
                 <div className="form-container sign-in-container">
@@ -91,16 +134,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
-
-            <footer>
-                <p>
-                    Created with <i className="fa fa-heart"></i> by
-                    <a target="_blank" href="https://florin-pop.com">Florin Pop</a>
-                    - Read how I created this and how you can join the challenge
-                    <a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
-                </p>
-            </footer>
-    </section> 
+        </section> 
     );
 };
 export default Login;

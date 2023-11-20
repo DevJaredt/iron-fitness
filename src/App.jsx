@@ -2,6 +2,8 @@ import './App.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Index from './pages/index/Index';
 import Nav from './componets/nav/Nav';
+import Modal from 'react-modal';
+
 
 const router = createBrowserRouter([
   {
@@ -55,6 +57,8 @@ const router = createBrowserRouter([
   },
   
 ]);
+
+Modal.setAppElement('#root');
 
 function App() {
   return (

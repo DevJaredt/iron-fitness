@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-ring">
+  <circle cx="50" cy="50" fill="none" r="40" stroke="#3498db" stroke-width="8" stroke-linecap="round">
+    <animate attributeName="stroke-dasharray" values="0 251.32741228718345;42.855820381671275 208.47159219250318;93.24950375426135 157.41235114885645;156.52579856899485 94.13605633412296;208.47159219250318 42.19026271061463;251.32741228718345 0;0 251.32741228718345" keyTimes="0;0.16666666666666666;0.3333333333333333;0.5;0.6666666666666666;0.8333333333333334;1" dur="1.5s" repeatCount="indefinite"></animate>
+  </circle>
+</svg>

@@ -3,7 +3,7 @@ import "./Nav.css";
 const Nav =  () => { 
     
     return  <header> 
-        <a href="#" className="logo"> <i className="bx bx-home"></i>IRON FITNESS</a>
+        <a href={"/"} className="logo"> <i className="bx bx-home"></i>IRON FITNESS</a>
         <ul className="navlist">
             <li><a href={"/"} className="active">Home</a></li> 
             <li><a href={"/our_shop"}>Our shop</a></li>

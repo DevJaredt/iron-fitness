@@ -1,14 +1,30 @@
 import "./ShoppingCart.css";
 
 import RowShoppingCart from "../../componets/rowShoppingCart/RowShoppingCart";
-import { getData, setData } from "./../../utils/localStorage";
+import { getData, removeItem, setData } from "./../../utils/localStorage";
 import { useEffect, useState } from "react";
 import { Parameters } from "../../utils/constants";
 import { post, remove } from "../../utils/axios";
 import { error, success } from "../../utils/toast";
+import CartLoader from "../../componets/cartLoader/CartLoader";
+import Modal from 'react-modal';
+
+
+const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      borderRadius: "100px"
+    },
+};
 
 const ShoppingCart = () => {
     const [products, setProducts] = useState([]);
+    const [processingPayment, setProcessingPayment] = useState(false);
     
     const totalPrice = products.reduce((acc, current) => acc += current?.price * current?.amount, 0);
 
@@ -70,6 +86,28 @@ const ShoppingCart = () => {
         success("Item removido con exito");
     };
 
+    const onHandlerCheckout = (e) => {
+        try {
+            e.preventDefault();
+            setProcessingPayment(true);
+            setTimeout(async () => {
+                const url = `${Parameters.BACKEND_URL}/cart/payment`;
+                await post(url, {});
+                success("Se ha realizado el pago con exito");
+                setProducts([]);
+                removeItem("cart");
+                setProcessingPayment(false);
+            }, 3000);
+        } catch (err) {
+            setProcessingPayment(false);
+            error("Error al procesar el pago");
+        }
+    };
+    
+    function closeModal() {
+        setProcessingPayment(false);
+    }
+
     useEffect(() => {
         setProducts(getData("cart") || []);
     }, []);
@@ -98,10 +136,19 @@ const ShoppingCart = () => {
                         <div className="col">TOTAL PRICE</div>
                         <div className="col text-right">$ {totalPrice}</div>
                     </div>
-                    <button className="btn">CHECKOUT</button>
+                    {
+                        products.length ? <button onClick={onHandlerCheckout} className="btn" disabled={processingPayment} >CHECKOUT</button> : ""
+                    }
                 </div>
             </div>
-            
+            <Modal
+                isOpen={true}
+                onRequestClose={closeModal}
+                style={customStyles}
+                contentLabel="Procesando pago"
+            >
+                <CartLoader/>
+            </Modal>
         </section>
     );
 };
